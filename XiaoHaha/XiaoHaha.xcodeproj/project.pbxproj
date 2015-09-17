@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6277E241BAAAFE900C561E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277E231BAAAFE900C561E0 /* main.m */; };
-		A6277E271BAAAFE900C561E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277E261BAAAFE900C561E0 /* AppDelegate.m */; };
-		A6277E2A1BAAAFE900C561E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277E291BAAAFE900C561E0 /* ViewController.m */; };
 		A6277E2F1BAAAFE900C561E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6277E2E1BAAAFE900C561E0 /* Images.xcassets */; };
 		A6277E321BAAAFE900C561E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6277E301BAAAFE900C561E0 /* LaunchScreen.xib */; };
 		A6277E3E1BAAAFE900C561E0 /* XiaoHahaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277E3D1BAAAFE900C561E0 /* XiaoHahaTests.m */; };
@@ -60,6 +57,12 @@
 		A6277ED91BAAB35600C561E0 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EA81BAAB35500C561E0 /* UIImageView+HighlightedWebCache.m */; };
 		A6277EDA1BAAB35600C561E0 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EAA1BAAB35500C561E0 /* UIImageView+WebCache.m */; };
 		A6277EDB1BAAB35600C561E0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EAC1BAAB35500C561E0 /* UIView+WebCacheOperation.m */; };
+		A6277EE21BAABAAA00C561E0 /* Joke.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EE11BAABAAA00C561E0 /* Joke.m */; };
+		A6277EE51BAABAC500C561E0 /* JokeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EE41BAABAC500C561E0 /* JokeFrame.m */; };
+		A6277EEC1BAAC7BF00C561E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EEA1BAAC7BF00C561E0 /* AppDelegate.m */; };
+		A6277EED1BAAC7BF00C561E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EEB1BAAC7BF00C561E0 /* main.m */; };
+		A6277EF51BAAC82200C561E0 /* JokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EF41BAAC82200C561E0 /* JokeCell.m */; };
+		A6277EF91BAACC0E00C561E0 /* FunnyImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6277EF81BAACC0E00C561E0 /* FunnyImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,11 +78,6 @@
 /* Begin PBXFileReference section */
 		A6277E1E1BAAAFE900C561E0 /* XiaoHaha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoHaha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6277E221BAAAFE900C561E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6277E231BAAAFE900C561E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A6277E251BAAAFE900C561E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A6277E261BAAAFE900C561E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A6277E281BAAAFE900C561E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6277E291BAAAFE900C561E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6277E2E1BAAAFE900C561E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A6277E311BAAAFE900C561E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A6277E371BAAAFE900C561E0 /* XiaoHahaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XiaoHahaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +179,17 @@
 		A6277EAA1BAAB35500C561E0 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A6277EAB1BAAB35500C561E0 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		A6277EAC1BAAB35500C561E0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		A6277EE01BAABAAA00C561E0 /* Joke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joke.h; sourceTree = "<group>"; };
+		A6277EE11BAABAAA00C561E0 /* Joke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joke.m; sourceTree = "<group>"; };
+		A6277EE31BAABAC500C561E0 /* JokeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeFrame.h; sourceTree = "<group>"; };
+		A6277EE41BAABAC500C561E0 /* JokeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeFrame.m; sourceTree = "<group>"; };
+		A6277EE91BAAC7BF00C561E0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6277EEA1BAAC7BF00C561E0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6277EEB1BAAC7BF00C561E0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Main/main.m; sourceTree = "<group>"; };
+		A6277EF31BAAC82200C561E0 /* JokeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeCell.h; sourceTree = "<group>"; };
+		A6277EF41BAAC82200C561E0 /* JokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeCell.m; sourceTree = "<group>"; };
+		A6277EF71BAACC0E00C561E0 /* FunnyImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnyImageViewController.h; sourceTree = "<group>"; };
+		A6277EF81BAACC0E00C561E0 /* FunnyImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnyImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,11 +231,11 @@
 		A6277E201BAAAFE900C561E0 /* XiaoHaha */ = {
 			isa = PBXGroup;
 			children = (
+				A6277EF61BAACC0E00C561E0 /* Controller */,
+				A6277EF21BAAC7DF00C561E0 /* View */,
+				A6277EE81BAAC7BF00C561E0 /* Main */,
+				A6277EDF1BAABA9C00C561E0 /* Model */,
 				A6277E471BAAB35500C561E0 /* Lib */,
-				A6277E251BAAAFE900C561E0 /* AppDelegate.h */,
-				A6277E261BAAAFE900C561E0 /* AppDelegate.m */,
-				A6277E281BAAAFE900C561E0 /* ViewController.h */,
-				A6277E291BAAAFE900C561E0 /* ViewController.m */,
 				A6277E2E1BAAAFE900C561E0 /* Images.xcassets */,
 				A6277E301BAAAFE900C561E0 /* LaunchScreen.xib */,
 				A6277E211BAAAFE900C561E0 /* Supporting Files */,
@@ -238,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				A6277E221BAAAFE900C561E0 /* Info.plist */,
-				A6277E231BAAAFE900C561E0 /* main.m */,
+				A6277EEB1BAAC7BF00C561E0 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -403,6 +412,44 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		A6277EDF1BAABA9C00C561E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6277EE01BAABAAA00C561E0 /* Joke.h */,
+				A6277EE11BAABAAA00C561E0 /* Joke.m */,
+				A6277EE31BAABAC500C561E0 /* JokeFrame.h */,
+				A6277EE41BAABAC500C561E0 /* JokeFrame.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6277EE81BAAC7BF00C561E0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A6277EE91BAAC7BF00C561E0 /* AppDelegate.h */,
+				A6277EEA1BAAC7BF00C561E0 /* AppDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A6277EF21BAAC7DF00C561E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6277EF31BAAC82200C561E0 /* JokeCell.h */,
+				A6277EF41BAAC82200C561E0 /* JokeCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6277EF61BAACC0E00C561E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6277EF71BAACC0E00C561E0 /* FunnyImageViewController.h */,
+				A6277EF81BAACC0E00C561E0 /* FunnyImageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -517,24 +564,28 @@
 				A6277ECB1BAAB35600C561E0 /* UIView+MJExtension.m in Sources */,
 				A6277EBA1BAAB35500C561E0 /* MJConst.m in Sources */,
 				A6277EC51BAAB35600C561E0 /* MJRefreshBaseView.m in Sources */,
+				A6277EE21BAABAAA00C561E0 /* Joke.m in Sources */,
+				A6277EEC1BAAC7BF00C561E0 /* AppDelegate.m in Sources */,
 				A6277ED61BAAB35600C561E0 /* UIImage+GIF.m in Sources */,
 				A6277ED41BAAB35600C561E0 /* SDWebImagePrefetcher.m in Sources */,
-				A6277E2A1BAAAFE900C561E0 /* ViewController.m in Sources */,
 				A6277EAE1BAAB35500C561E0 /* AFHTTPRequestOperationManager.m in Sources */,
 				A6277EB01BAAB35500C561E0 /* AFNetworkReachabilityManager.m in Sources */,
 				A6277ECF1BAAB35600C561E0 /* SDWebImageCompat.m in Sources */,
 				A6277ED11BAAB35600C561E0 /* SDWebImageDownloader.m in Sources */,
 				A6277ED21BAAB35600C561E0 /* SDWebImageDownloaderOperation.m in Sources */,
+				A6277EF91BAACC0E00C561E0 /* FunnyImageViewController.m in Sources */,
 				A6277ED01BAAB35600C561E0 /* SDWebImageDecoder.m in Sources */,
 				A6277ED31BAAB35600C561E0 /* SDWebImageManager.m in Sources */,
 				A6277EC81BAAB35600C561E0 /* MJRefreshHeaderView.m in Sources */,
 				A6277EC01BAAB35500C561E0 /* MJTypeEncoding.m in Sources */,
+				A6277EED1BAAC7BF00C561E0 /* main.m in Sources */,
 				A6277EB41BAAB35500C561E0 /* AFURLResponseSerialization.m in Sources */,
 				A6277EB61BAAB35500C561E0 /* MBProgressHUD+MJ.m in Sources */,
 				A6277EC31BAAB35600C561E0 /* NSObject+MJMember.m in Sources */,
 				A6277EDB1BAAB35600C561E0 /* UIView+WebCacheOperation.m in Sources */,
 				A6277EB21BAAB35500C561E0 /* AFURLConnectionOperation.m in Sources */,
 				A6277EB11BAAB35500C561E0 /* AFSecurityPolicy.m in Sources */,
+				A6277EF51BAAC82200C561E0 /* JokeCell.m in Sources */,
 				A6277EAF1BAAB35500C561E0 /* AFHTTPSessionManager.m in Sources */,
 				A6277EBE1BAAB35500C561E0 /* MJMethod.m in Sources */,
 				A6277EC21BAAB35600C561E0 /* NSObject+MJKeyValue.m in Sources */,
@@ -547,8 +598,7 @@
 				A6277ED81BAAB35600C561E0 /* UIImage+WebP.m in Sources */,
 				A6277EC91BAAB35600C561E0 /* UIScrollView+MJExtension.m in Sources */,
 				A6277EC11BAAB35500C561E0 /* NSObject+MJCoding.m in Sources */,
-				A6277E271BAAAFE900C561E0 /* AppDelegate.m in Sources */,
-				A6277E241BAAAFE900C561E0 /* main.m in Sources */,
+				A6277EE51BAABAC500C561E0 /* JokeFrame.m in Sources */,
 				A6277EB81BAAB35500C561E0 /* MBProgressHUD.m in Sources */,
 				A6277EBB1BAAB35500C561E0 /* MJFoundation.m in Sources */,
 				A6277ECE1BAAB35600C561E0 /* SDImageCache.m in Sources */,
