@@ -12,6 +12,7 @@
 #import "MJExtension.h"
 #import "Joke.h"
 #import "MJRefresh.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface FunnyImageViewController ()
 @property(nonatomic, strong) NSMutableArray *jokes;
@@ -32,6 +33,8 @@
     
     self.tableView.backgroundColor = [UIColor grayColor];
     
+    [MBProgressHUD showMessage:@"正在加载..." toView:self.tableView];
+    
     [self loadJokes];
     
     [self setupUpRefresh];
@@ -46,7 +49,7 @@
 {
     static NSUInteger page = 0;
     NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/showapi_joke/joke_pic";
-    NSString *httpArg = [NSString stringWithFormat:@"page=%i", ++page];
+    NSString *httpArg = [NSString stringWithFormat:@"page=%lu", (unsigned long)++page];
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, httpArg];
     NSURL *url = [NSURL URLWithString: urlStr];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 30];
@@ -56,20 +59,28 @@
                                        queue: [NSOperationQueue mainQueue]
                            completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
                                if (error) {
+                                   [MBProgressHUD hideHUDForView:self.tableView];
+                                   [MBProgressHUD showMessage:@"请检查网络!" toView:self.tableView];
                                    NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                } else {
                                    NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
                                    
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                                    NSDictionary *dictIn = dict[@"showapi_res_body"];
-                                   NSArray *newJokes = [Joke objectArrayWithKeyValuesArray:dictIn[@"contentlist"]];
-                                   [self.jokes addObjectsFromArray:newJokes];
-                                   
-                                   [self.tableView reloadData];
-                                   [self.tableView footerEndRefreshing];
-                                   
-                                   NSLog(@"HttpResponseCode:%ld page:%i", (long)responseCode, page);
-                                   
+                                   if (dictIn) {
+                                       NSArray *newJokes = [Joke objectArrayWithKeyValuesArray:dictIn[@"contentlist"]];
+                                       [self.jokes addObjectsFromArray:newJokes];
+                                       
+                                       [self.tableView reloadData];
+                                       [self.tableView footerEndRefreshing];
+                                       
+                                       [MBProgressHUD hideHUDForView:self.tableView];
+                                       
+                                       NSLog(@"HttpResponseCode:%ld page:%i", (long)responseCode, page);
+                                   } else {
+                                       [MBProgressHUD hideHUDForView:self.tableView];
+                                       [MBProgressHUD showMessage:@"加载数据失败!" toView:self.tableView];
+                                   }
                                }
                            }];
 
