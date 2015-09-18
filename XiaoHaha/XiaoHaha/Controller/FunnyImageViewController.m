@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "MJExtension.h"
 #import "Joke.h"
+#import "MJRefresh.h"
 
 @interface FunnyImageViewController ()
 @property(nonatomic, strong) NSMutableArray *jokes;
@@ -32,34 +33,23 @@
     self.tableView.backgroundColor = [UIColor grayColor];
     
     [self loadJokes];
+    
+    [self setupUpRefresh];
+}
+
+- (void)setupUpRefresh
+{
+    [self.tableView addFooterWithTarget:self action:@selector(loadJokes)];
 }
 
 - (void)loadJokes
 {
-//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-//    
-//    NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/showapi_joke/joke_pic";
-//    
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    params[@"apikey"] = @"a86678ba0bfe00d5954d5561e42a8813";
-//    
-//    [mgr GET:httpUrl parameters:params success:^(AFHTTPRequestOperation *operation, id json) {
-//        NSArray *newJokes = [Joke objectArrayWithKeyValuesArray:json[@"contentlist"]];
-//        [self.jokes addObjectsFromArray:newJokes];
-//        [self.tableView reloadData];
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"请求失败--%@",error);
-//    }];
+    static NSUInteger page = 0;
     NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/showapi_joke/joke_pic";
-    NSString *httpArg = @"page=1";
-    [self request: httpUrl withHttpArg: httpArg];
-}
-
--(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg
-{
-    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
+    NSString *httpArg = [NSString stringWithFormat:@"page=%i", ++page];
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, httpArg];
     NSURL *url = [NSURL URLWithString: urlStr];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 30];
     [request setHTTPMethod: @"GET"];
     [request addValue: @"a86678ba0bfe00d5954d5561e42a8813" forHTTPHeaderField: @"apikey"];
     [NSURLConnection sendAsynchronousRequest: request
@@ -74,13 +64,17 @@
                                    NSDictionary *dictIn = dict[@"showapi_res_body"];
                                    NSArray *newJokes = [Joke objectArrayWithKeyValuesArray:dictIn[@"contentlist"]];
                                    [self.jokes addObjectsFromArray:newJokes];
-                                   [self.tableView reloadData];
                                    
-                                   NSLog(@"HttpResponseCode:%ld", (long)responseCode);
-
+                                   [self.tableView reloadData];
+                                   [self.tableView footerEndRefreshing];
+                                   
+                                   NSLog(@"HttpResponseCode:%ld page:%i", (long)responseCode, page);
+                                   
                                }
                            }];
+
 }
+
 
 #pragma mark - Table view data source
 

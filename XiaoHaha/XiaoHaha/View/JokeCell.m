@@ -82,13 +82,13 @@
     CGFloat contenX = 10.0;
     CGFloat imageWH = 300;
     
-    self.titleLabel.frame = CGRectMake(contenX, 10, cellW, 20);
+    self.titleLabel.frame = CGRectMake(contenX, 20, cellW, 20);
     self.titleLabel.text = joke.title;
     
-    self.timeLabel.frame = CGRectMake(contenX, 35, cellW, 20);
+    self.timeLabel.frame = CGRectMake(contenX, 45, cellW, 20);
     self.timeLabel.text = joke.ct;
     
-    self.imgView.frame = CGRectMake((cellW - imageWH)*0.5, 70, imageWH, imageWH);
+    self.imgView.frame = CGRectMake((cellW - imageWH)*0.5, 80, imageWH, imageWH);
     NSURL *imgUrl = [NSURL URLWithString:joke.img];
     [self.imgView sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"holder"]];
 }
