@@ -23,7 +23,9 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     // 2.设置根控制器
-    self.window.rootViewController = [[FunnyImageViewController alloc] init];
+    FunnyImageViewController *funnyImageVC = [[FunnyImageViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:funnyImageVC];
+    self.window.rootViewController = nav;
     
     // 3.显示窗口
     [self.window makeKeyAndVisible];

@@ -31,6 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"图片笑话";
+    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    
     self.tableView.backgroundColor = [UIColor grayColor];
     
     [MBProgressHUD showMessage:@"正在加载..." toView:self.tableView];
